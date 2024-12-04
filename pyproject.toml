@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "e2ee"
+version = "0.1.0"
+description = ""
+authors = ["Tombugolya <tom.bugolya@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+cryptography = "^43.0.3"
+bcrypt = "^4.2.0"
+pyotp = "^2.9.0"
+qrcode = "^8.0"
+pillow = "^11.0.0"
+pyjwt = "^2.9.0"
+flask = "^3.1.0"
+click = "^8.1.7"
+requests = "^2.32.3"
+
+[tool.poetry.scripts]
+server = "e2ee.server.server:run_server"
+e2ee-cli = "e2ee.cli.cli:cli"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.7.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "W",
+    "F",
+    "I",
+    "B",
+    "C4",
+    "N",
+]
+ignore = [
+    "C901",
+    "W191",
+    "D401"
+]
